@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.emxcel.navigation.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.emxcel.navigation.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account">
+        <action
+            android:id="@+id/action_accountFragment_to_detatilFragment"
+            app:destination="@id/detatilFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.emxcel.navigation.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/detatilFragment"
+        android:name="com.example.emxcel.navigation.DetatilFragment"
+        android:label="fragment_detatil"
+        tools:layout="@layout/fragment_detatil" >
+       <argument android:name="nameArg"
+           android:defaultValue=" "
+           app:argType="string"/>
+        <argument android:name="emailArg"
+            android:defaultValue=" "
+            app:argType="string"/>
+    </fragment>
+</navigation>
